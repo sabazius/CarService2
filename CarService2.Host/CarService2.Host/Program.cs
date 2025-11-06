@@ -1,3 +1,5 @@
+using Microsoft.OpenApi.Models;
+
 namespace CarService2.Host
 {
     public class Program
@@ -10,16 +12,27 @@ namespace CarService2.Host
 
             builder.Services.AddControllers();
 
-            var app = builder.Build();
+            builder.Services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Car Service 2", Version = "v1" });
+            });
 
+            var app = builder.Build();
             // Configure the HTTP request pipeline.
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
 
             app.MapControllers();
+
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("v1/swagger.json", "Car Service 2 V1");
+            });
+
+            app.UseSwagger();
 
             app.Run();
         }
