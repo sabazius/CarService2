@@ -1,3 +1,4 @@
+using CarService2.DL.Interfaces;
 using Microsoft.OpenApi.Models;
 
 namespace CarService2.Host
@@ -13,9 +14,9 @@ namespace CarService2.Host
             builder.Services.AddControllers();
 
             builder.Services.AddSwaggerGen(options =>
-            {
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Car Service 2", Version = "v1" });
-            });
+               {
+                   options.SwaggerDoc("v1", new OpenApiInfo { Title = "Car Service 2", Version = "v1" });
+               });
 
             var app = builder.Build();
             // Configure the HTTP request pipeline.
