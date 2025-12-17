@@ -1,3 +1,5 @@
+using CarService2.BL;
+using CarService2.DL;
 using CarService2.DL.Interfaces;
 using Microsoft.OpenApi.Models;
 
@@ -10,6 +12,9 @@ namespace CarService2.Host
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services
+                .AddDataLayerServices()
+                .AddBusinessLayerServices();
 
             builder.Services.AddControllers();
 

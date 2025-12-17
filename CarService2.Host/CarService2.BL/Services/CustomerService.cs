@@ -42,7 +42,7 @@ namespace CarService2.BL.Services
                 Email = customer.Email,
                 Id = customer.Id,
                 Name = customer.Name
-            }
+            };
         }
 
         public void AddCustomer(AddCustomerRequest request)
