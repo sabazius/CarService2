@@ -1,4 +1,5 @@
-﻿using CarService2.DL.Interfaces;
+﻿using CarService2.DL.Infrastructure.HostedServices;
+using CarService2.DL.Interfaces;
 using CarService2.DL.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
